@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCT Number Of Neutrons Calculator</title>
+    <style
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 8px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>MCT Number Of Neutrons Calculator</h2>
+    <input type="number" id="inputNumber" placeholder="Enter number of protons">
+    <button onclick="calculate()">Calculate</button>
+    <div id="output"></div>
+
+    <script>
+        function calculate() {
+            var inputNumber = parseFloat(document.getElementById("inputNumber").value);
+            var d = inputNumber / 1.8636363636363636363636363636363;
+            var n = inputNumber + d;
+            var mass = inputNumber + n;
+            document.getElementById("output").innerHTML = "Difference: " + d.toFixed(2) + "<br>Neutrons: " + n.toFixed(2) + "<br>Mass: " + mass.toFixed(2);
+        }
+    </script>
+</body>
+</html>
